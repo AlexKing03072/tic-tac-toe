@@ -1,0 +1,112 @@
+body {
+  background-image: url('BG.jpg');
+  /* 设置背景图的显示方式，这里的 cover 表示尽量填充并保持比例 */
+  background-size: cover;
+  /* 设置背景图的位置，这里的 center 表示居中显示 */
+  background-position: center;
+  /* 设置背景颜色，如果背景图加载失败或无法显示时会显示这个颜色 */
+  background-color:grey;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  .board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 5px;
+    margin-bottom: 10px;
+  }
+  .cell {
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 2px solid #000; /* 添加明顯的黑色框線 */
+  }
+  
+  .cell[data-cell="0"] {
+    background-image: url('imageX.jpg');
+  }
+  
+  .cell[data-cell="1"] {
+    background-image: url('imageO.jpg');
+  }
+  .cell[data-cell="2"] {
+    background-image: url('imageX.jpg');
+  }
+  
+  .cell[data-cell="3"] {
+    background-image: url('imageO.jpg');
+  }
+  .cell[data-cell="4"] {
+    background-image: url('imageX.jpg');
+  }
+  
+  .cell[data-cell="5"] {
+    background-image: url('imageO.jpg');
+  }
+  .cell[data-cell="6"] {
+    background-image: url('imageX.jpg');
+  }
+  .cell[data-cell="7"] {
+    background-image: url('imageO.jpg');
+  }
+  .cell[data-cell="8"] {
+        background-image: url('imageX.jpg');
+      }
+  
+  /* .cell:hover {
+    background: #ddd;
+  } */
+
+  /* 添加一個新的類來移除 hover 效果 */
+  /* .cell.no-hover:hover {
+    background: #eee;
+  } */
+  
+  
+  .game-status {
+    font-weight: bold;
+  }
+  
+  .restart-btn {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+  }
+
+  /* .main-menu-btn {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+  } */
+
+
+  @media (max-width: 600px) {
+    .board {
+      grid-template-columns: repeat(3, 80px); /* 調整格子大小 */
+      grid-gap: 3px; /* 調整格子之間的間距 */
+    }
+  
+    .cell {
+      width: 80px; /* 調整單一格子大小 */
+      height: 80px;
+      font-size: 14px; /* 可能需要調整文字大小 */
+    }
+    
+    /* 其他你需要調整的樣式... */
+  }
+  
+  
