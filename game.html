@@ -7,6 +7,12 @@
       </head>
       <body>
         <div class="container">
+          <div class="custom-modal" id="customModal">
+            <div class="modal-content">
+              <span class="close" onclick="closeModal()">&times;</span>
+              <p id="modalMessage"></p>
+            </div>
+          </div>
           <h1>Tic Tac Toe</h1>
           <div class="board">
             <div class="cell" data-cell="0"></div>
@@ -22,10 +28,9 @@
           <p class="game-status"></p>
           <button class="main-menu-btn" style="display: none;">Main Menu</button>
           <button class="restart-btn" style="display: none;">Restart Game</button>
-          <button class="start-btn-1v1">Start 1v1 Game</button>
-          <button class="start-btn-vs-computer">Start vs Computer</button>
+          <button id="startBtn1v1" class="start-btn-1v1">Start 1v1</button>
+          <button id="startBtnVsComputer" class="start-btn-vs-computer">Start Vs Computer</button>
         </div>
-      
   <script src="gameScript.js"></script>
 </body>
 </html>

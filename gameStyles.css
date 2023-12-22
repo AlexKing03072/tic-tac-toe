@@ -109,4 +109,107 @@ body {
     /* 其他你需要調整的樣式... */
   }
   
+  /* 在 CSS 中设置按钮的默认样式 */
+
+
+
+/* 设置按钮悬停时的样式改变或动画效果 */
+
+/* 设置按钮的外观 */
+.start-btn-1v1,
+.start-btn-vs-computer {
+  /* 其他样式 */
+
+  /* 设置圆弧外框 */
+  border: 2px solid #ccc;
+  border-radius: 10px; /* 圆弧的半径 */
+}
+
+/* 设置按钮悬停时的样式改变或动画效果 */
+.start-btn-1v1:hover,
+.start-btn-vs-computer:hover {
+  /* 改变背景颜色 */
+  background-color: #29b954;
+  transition: background-color 0.3s ease; /* 添加过渡动画 */
+
+  /* 保持圆弧外框不改变 */
+  border-color: #ccc; /* 悬停时保持原有颜色 */
+}
+
+/* 样式化自定义模态框 */
+
+
+.custom-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000; /* 将 z-index 设置为一个较高的值，确保在最上层 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  position: absolute;
+  top: 10%; /* 将模态框内容置于页面的上方 */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fefefe;
+  width: 400px;
+  padding: 20px;
+  border: 1px solid #888;
+}
+
+.close {
+  color: red;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+/* .custom-modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+} */
+
+  
   

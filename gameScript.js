@@ -7,6 +7,15 @@ const startButtonVsComputer = document.querySelector('.start-btn-vs-computer');
 const mainMenuButton = document.querySelector('.main-menu-btn');
 
 
+
+
+// 获取按钮元素
+const startButton1v1Effect = document.getElementById('startBtn1v1'); // 替换为你的按钮的实际 ID
+// 获取按钮元素
+const startButtonVsComputerEffect = document.getElementById('startBtnVsComputer'); // 替换为你的按钮的实际 ID
+
+
+
 let currentPlayer = 'X';
 let gameActive = false; // 初始設定遊戲未啟動
 let vsComputerMode;
@@ -73,29 +82,51 @@ function checkResult() {
       gameState[a] === gameState[c]
     ) {
       roundWon = true;
-      togglePlayer();//由於加上setTimeout函數似乎會多執行一次toggle,造成顯示不符合
+      togglePlayer();//多執行一次toggle,造成顯示不符合
       break;
     }
   }
 
+  // if (roundWon) {
+  //   gameActive = false;
+  //   setTimeout(() => {
+  //     window.alert(`${currentPlayer} 獲勝了！`);
+  //     restartButton.style.display = 'block'; // 顯示Restart按鈕
+  //     // mainMenuButton.style.display ='block';
+  //   }, 500); // 延遲500毫秒显示消息框
+  //   return;
+  // }
+
+  // if (!gameState.includes('')) {
+  //   gameActive = false;
+  //   setTimeout(() => {
+  //     window.alert('這是平局！');
+  //     restartButton.style.display = 'block'; // 顯示Restart按鈕
+  //   }, 500); // 延遲500毫秒显示消息框
+  //   return;
+  // }
+
   if (roundWon) {
     gameActive = false;
     setTimeout(() => {
-      window.alert(`${currentPlayer} 獲勝了！`);
-      restartButton.style.display = 'block'; // 顯示Restart按鈕
+      showModal(`${currentPlayer} 獲勝了！`);
+      restartButton.style.display = 'block'; // 显示Restart按钮
       // mainMenuButton.style.display ='block';
-    }, 500); // 延遲500毫秒显示消息框
+    }, 500); // 延迟500毫秒显示消息框
     return;
   }
-
+  
   if (!gameState.includes('')) {
     gameActive = false;
     setTimeout(() => {
-      window.alert('這是平局！');
-      restartButton.style.display = 'block'; // 顯示Restart按鈕
-    }, 500); // 延遲500毫秒显示消息框
+      showModal('這是平局！');
+      restartButton.style.display = 'block'; // 显示Restart按钮
+    }, 500); // 延迟500毫秒显示消息框
     return;
   }
+  
+
+
 }
 
 function togglePlayer() {
@@ -164,8 +195,44 @@ cells.forEach(cell => {
   cell.addEventListener('click', handleCellClick);
 });
 
+
+
+
+// // 添加点击事件监听器
+// startButton1v1Effect.addEventListener('click', function() {
+//   // 在这里添加按钮点击后的特效或动画
+//   // 例如改变颜色、大小、旋转等
+//   button.style.backgroundColor = '#ff6347'; // 改变背景颜色为红色
+//   button.style.transform = 'rotate(45deg)'; // 旋转按钮
+// });
+
+
+// // 添加点击事件监听器
+// startButtonVsComputerEffect.addEventListener('click', function() {
+//   // 在这里添加按钮点击后的特效或动画
+//   // 例如改变颜色、大小、旋转等
+//   button.style.backgroundColor = '#ff6347'; // 改变背景颜色为红色
+//   button.style.transform = 'rotate(45deg)'; // 旋转按钮
+// });
+
+
 restartButton.addEventListener('click', restartGame);
 startButton1v1.addEventListener('click', startGame1v1);
 startButtonVsComputer.addEventListener('click', startVsComputerGame);
 // mainMenuButton.addEventListener('click', returnToMainMenu);
 
+
+
+// 显示模态框
+function showModal(message) {
+  const modal = document.getElementById('customModal');
+  const modalMessage = document.getElementById('modalMessage');
+  modalMessage.textContent = message;
+  modal.style.display = 'block';
+}
+
+// 关闭模态框
+function closeModal() {
+  const modal = document.getElementById('customModal');
+  modal.style.display = 'none';
+}
